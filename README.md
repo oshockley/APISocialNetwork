@@ -18,8 +18,6 @@ This project demonstrates the power of a NoSQL database to handle large volumes 
 - [Models](#models)
 - [API Routes](#api-routes)
 - [Walkthrough Video](#walkthrough-video)
-- [Grading Criteria](#grading-criteria)
-- [License](#license)
 
 ---
 
