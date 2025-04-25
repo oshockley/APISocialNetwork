@@ -1,12 +1,13 @@
-const { connect, connection } = require('mongoose');
+const mongoose = require('mongoose');
 
-const connectionString =
-    process.env.MONGODB_URI || 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/socialnetworkDB');
 
-    connect(connectionString, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    });
+mongoose.connection.on('connected', () => {
+  console.log('Mongoose connected to MongoDB');
+});
 
-    module.exports = connection;
+mongoose.connection.on('error', (err) => {
+  console.error('Mongoose connection error:', err);
+});
 
+module.exports = mongoose.connection;
